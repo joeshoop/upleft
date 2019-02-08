@@ -1,0 +1,28 @@
+<!--
+Next Project
+template-nextproject.html
+-->
+
+{% assign sorted = site.projects | sort: 'year-start' | reverse %}
+{% for project in sorted %}
+    {% if project.title == page.title %}
+  		{% if forloop.last == false %}
+    		{% assign next = sorted[forloop.index] %}
+        {% endif %}
+
+    	{% if forloop.last %}
+  			{% assign next = sorted[0] %}
+        {% endif %}
+    {% endif %}
+{% endfor %}
+
+{% if next.url %}
+<div class="next-project full-width">
+    <a class="project-wrap full-width" href="{{ next.url | remove: "index.html" }}">
+	<h2>Next</h2>
+    <h1>
+        {{ next.title }}
+    </h1>
+    </a>
+</div>
+{% endif %}

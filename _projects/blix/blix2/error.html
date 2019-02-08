@@ -1,0 +1,203 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width">
+
+	<link rel="shortcut icon" href="static/images/favicon.ico">
+	<link rel="stylesheet" href="static/css/style.css">
+
+	
+	<title>Blix | My Blix</title>
+	
+
+</head>
+<body>
+	
+<script type="text/javascript" charset="utf-8" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+
+<script type="text/javascript" charset="utf-8">
+	$(document).ready(function() {
+		
+		// Add the missing url to the text
+		$("#url").text(window.location.pathname);
+		
+		// Fix the css locations dynamically
+		$("head link").each(function() {
+			for (var i=0; i<window.location.pathname.split(/\//g).length-2; i++)
+				$(this).attr("href", "../" + $(this).attr("href"));
+		});
+		
+	})
+</script>
+
+<p>
+	Sorry the page <b id="url"></b> could not be found on this server.
+</p>
+
+
+	
+	<script src="//code.jquery.com/jquery.min.js"></script>
+	<script src="/static/js/main.js"></script>
+	
+</body>
+
+<script>
+
+/*
+Click on Cards or pin to open detail. Click outside of detail to close it. Positioning needs to be applied before the animation. Currently scales out of previously clicked element. Fix it.
+
+Commenting some stuff out for the demo version
+*/
+
+	$(".list .row, .pin").click(function () {
+
+		if ($('.selectbar').hasClass('on')) {
+			$(this).toggleClass('selected'); // If in select mode, clicking anywhere on a row selects it
+		}
+
+		else {
+			/*
+			This code is meant to animate the detail out from the clicked element. It needs some more love to get it working as intended.
+
+			var $this = $(this);
+			var offset = $this.offset(); // get position
+			var width = $this.outerWidth(); // get width
+			var height = $this.outerHeight(); // get height
+
+			var centerX = offset.left + width / 2; // set horizontal center of clicked element
+			var centerY = offset.top + height / 2; // set vertical center of clicked element
+
+			var styles = {'top':centerY,'left':centerX}
+			$(".wrap").css(styles); // add position style to .wrap
+
+			*/
+
+			$(".detail").addClass('show'); // Open Detail
+		}
+
+	});
+
+	$(".bg-dark").click(function () {
+		$(".detail").removeClass('show'); // Close Detail
+		$(".detail").scrollTop(0); // Scroll the detail back to the top so it opens unscrolled the next time
+	});
+
+	$("a.select").click(function () {
+		$(".list").toggleClass('select');
+		$(".selectbar, .sidebar .actionbar").addClass('on');
+		$(this).addClass('off');
+
+	});
+
+	$(".cancel").click(function (){
+		$(".row").removeClass('selected');
+		$(".selectbar, .sidebar .actionbar").removeClass('on');
+		$(".list").removeClass('select');
+		$(".select, .tags").removeClass('off');
+	});
+
+	$(".check").click(function () {
+		$(this).parent().toggleClass('selected');
+	});
+
+	$(".selectall").click(function () {
+
+		$(this).toggleClass('true');
+
+		var text = $(this).text();
+
+		if ( $(this).hasClass('true') ) {
+			$(".search ~ ul > li.row").addClass('selected');
+			$(this).text('Deselect All');
+		}
+
+		else {
+			$(".search ~ ul > li.row").removeClass('selected');
+			$(this).text('Select All');
+		}
+
+	});
+
+	$('.row, .pin').hover(function () { // Hovering on the list applies a hover state to the associated pin, and vice versa
+
+		var matches = $(this).data('name');
+
+		// alert(matches);
+
+		$('[data-name="'+matches+'"]').toggleClass('hovered');
+
+	});
+
+</script>
+
+<script>
+/*
+*	Set margin on top of the list to match height of static top bar
+*/
+
+$(document).ready(function() {
+
+	var margin = $(".search").outerHeight();
+
+	$(".search ~ ul > li.row:first-child").css("margin-top",margin);
+
+	var resized = false;
+
+	$(window).resize(function() {
+		resized = true;
+	});
+
+	setInterval(function() {
+		if ( resized ) {
+			resized = false;
+
+			var margin = $(".search").outerHeight();
+
+			$(".search ~ ul > li.row:first-child").css("margin-top",margin);
+
+		}
+	}, 250);
+
+});
+
+</script>
+
+<script>
+
+/*
+* Replace all SVG images with inline SVG
+*/
+
+jQuery('img.svg').each(function(){
+	var $img = jQuery(this);
+	var imgID = $img.attr('id');
+	var imgClass = $img.attr('class');
+	var imgURL = $img.attr('src');
+
+	jQuery.get(imgURL, function(data) {
+		// Get the SVG tag, ignore the rest
+		var $svg = jQuery(data).find('svg');
+
+		// Add replaced image's ID to the new SVG
+		if(typeof imgID !== 'undefined') {
+			$svg = $svg.attr('id', imgID);
+		}
+		// Add replaced image's classes to the new SVG
+		if(typeof imgClass !== 'undefined') {
+			$svg = $svg.attr('class', imgClass+' replaced-svg');
+		}
+
+		// Remove any invalid XML tags as per http://validator.w3.org
+		$svg = $svg.removeAttr('xmlns:a');
+
+		// Replace image with new SVG
+		$img.replaceWith($svg);
+
+	}, 'xml');
+
+});
+
+</script>
+</html>

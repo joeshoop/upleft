@@ -1,0 +1,27 @@
+// Header
+// header.scss
+
+.header, .primary-navigation ul {
+  display:flex;
+  flex-direction: row;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.StudioUpleft-Logo {
+  fill:$color-primary;
+}
+
+.primary-navigation ul li {
+  list-style-type:none;
+  margin-left:2rem;
+
+  a {
+    text-decoration:none;
+    @include font-style-mono-m
+  }
+
+  &.current {
+    border-bottom:2px solid $color-primary;
+  }
+}

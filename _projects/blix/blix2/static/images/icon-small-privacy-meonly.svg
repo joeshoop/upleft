@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="16px" height="19px" viewBox="0 0 16 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.1.1 (8761) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-small-privacy-meonly</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="List-View" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="icon-small-privacy-meonly" sketch:type="MSLayerGroup" fill="#000000">
+            <path d="M13.9212571,7 C13.9758168,6.67479153 14.0042156,6.34071221 14.0042156,6 C14.0042156,2.6862915 11.3179241,0 8.00421559,0 C4.69050709,0 2.00421559,2.6862915 2.00421559,6 C2.00421559,6.34071221 2.03261439,6.67479153 2.08717403,7 L1.99775053,7 C0.896751589,7 0.00421559556,7.90195036 0.00421559489,9.0085302 L0.00421559004,16.9914698 C0.00421558937,18.1007504 0.898493683,19 1.99775053,19 L14.0064654,19 C15.1074644,19 16.0000003,18.0980496 16.0000003,16.9914698 L16.0000003,9.0085302 C16.0000003,7.8992496 15.1057223,7 14.0064654,7 L13.9212571,7 Z M11.8781981,7 C11.9604626,6.68038008 12.0042156,6.34529957 12.0042156,6 C12.0042156,3.790861 10.2133546,2 8.00421559,2 C5.79507659,2 4.00421559,3.790861 4.00421559,6 C4.00421559,6.34529957 4.04796859,6.68038008 4.13023308,7 L11.8781981,7 Z" id="Oval-48" sketch:type="MSShapeGroup"></path>
+        </g>
+    </g>
+</svg>

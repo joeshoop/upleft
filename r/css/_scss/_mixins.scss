@@ -1,0 +1,9 @@
+@mixin color-contrast($color, $color-dark: #000, $color-light: #fff, $threshold: 50%) {
+
+  @if lightness($color) < $threshold {
+    color: $color-light;
+  } @else {
+    color: $color-dark;
+  }
+
+}

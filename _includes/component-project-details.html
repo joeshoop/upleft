@@ -1,0 +1,18 @@
+<div class="details-box">
+    <div class="details-segment">
+        <span class="label">Roles</span>
+        <span class="detail">{{ page.roles }}</span>
+    </div>
+    <div class="details-segment">
+            <span class="label">Employer</span>
+            <span class="detail">{{ page.employer }}</span>
+        </div>
+    <div class="details-segment">
+        <span class="label">Year</span>
+        <span class="detail">{{ page.year-start }}
+                {% if page.year-end != null %}
+                — {{ page.year-end }}
+                {% endif %}
+        </span>
+    </div>
+</div>

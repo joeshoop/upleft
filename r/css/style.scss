@@ -1,0 +1,83 @@
+---
+---
+@import "reset";
+@import "variables";
+@import "typography";
+
+html,body {
+  min-height:100%;
+  @include font-style-base;
+}
+
+body {
+  // background:repeating-linear-gradient(transparent, transparent 16px, #9198e5 16px, #9198e5 17px);
+  background:$color-background;
+  margin:$spacing-0;
+  padding:$page-spacing;
+}
+
+a {
+  color:currentColor;
+}
+
+.full-width {
+  margin-left:    -$page-spacing;
+  margin-right:   -$page-spacing;
+  padding-left:   $page-spacing;
+  padding-right:  $page-spacing;
+}
+
+.col.fluid {
+  width:100%;
+}
+
+@import "components/header";
+@import "components/details-box";
+@import "components/project-list";
+@import "components/project-page";
+@import "components/next-project";
+@import "components/more-projects";
+@import "components/footer";
+
+// Styling for custom colors per project
+// Jekyll only parses liquid in the main scss file
+
+{% for project in site.projects %}
+{% assign projectClass = project.url | remove: "index.html" | remove: "/projects/" | remove: "/" %}
+
+.project-{{ projectClass }} {
+
+  a {
+    color: {{ project.color }}
+  }
+
+}
+
+.page-{{ projectClass }} {
+
+  strong {
+    color:{{ project.color }};
+  }
+
+  .primary-navigation .current {
+    border-color:{{ project.color }};
+  }
+
+  .StudioUpleft-Logo {
+    fill:{{ project.color }};
+  }
+
+  .label {
+    color:{{ project.color }};
+  }
+
+  .project-container a {
+    &:hover {
+      color:{{ project.color }};
+    }
+  }
+}
+
+{% endfor %}
+
+

@@ -1,0 +1,12 @@
+<div class="header">
+    <a class="logo" href="/">
+        {% include component-logo.html %}
+    </a>
+    {% assign current = page.url | downcase | split: '/' %}
+    <nav class="primary-navigation">
+    <ul>
+        <li {% if current[1] == 'projects' or page.url == "/" %}class='current'{% endif %}><a href='/'>Projects</a></li>
+        <li {% if current[1] == 'about' %}class='current'{% endif %}><a href='/about'>About</a></li>
+    </ul>
+    </nav>
+</div>

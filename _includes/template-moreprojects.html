@@ -1,0 +1,37 @@
+<!--
+More Projects
+template-moreprojects.html
+-->
+
+<div class="more-projects">
+<h2>More Projects</h2>
+<ul class="projects">
+{% assign totalProjects = site.projects | size %}
+{% assign sorted = site.projects | sort: 'year-start' | reverse %}
+{% for project in sorted %}
+    {% if project.title == page.title %}
+        {% assign start = forloop.index | plus:1 %}
+        {% assign end = start | plus:2 %}
+        {% for i in (start..end) %}
+            {% if i < totalProjects %}
+                {% assign this = sorted[i] %}
+            {% endif %}
+            {% if i >= totalProjects %}
+                {% assign loop = i | minus:totalProjects %}
+                {% assign this = sorted[loop] %}
+            {% endif %}
+            {% assign projectClass = this.url | remove: "index.html" | remove: "/projects/" | remove: "/" %}
+            <li class="project project-{{ projectClass }}">
+                <a href="{{ this.url | remove: "index.html" }}">
+                    <div class="project-title-group">
+                        <h3>
+                            {{ this.title }}
+                        </h3>
+                    </div>
+                </a>
+            </li>		
+        {% endfor %}
+    {% endif %}
+{% endfor %}
+</ul>
+</div>

@@ -1,0 +1,68 @@
+// This doesn't compile for some reason. Works in browser things.
+
+// $cat-colors: (
+// foodanddrink: #FF7D32,
+// outdoors: #3DD439,
+// people: #2A4CA7,
+// poi: #9F3BE4,
+// shopping:#EB1F3F,
+// travel:#1DADC1
+// );
+//
+// @each $category, $color in $cat-colors {
+//   .cat-#{$category} .category, .cat-#{$category} {
+//     color:#{$color};
+//   }
+//
+//   .map .pin.cat-#{$category}, .cat-#{$category} .image.placeholder:after {
+//     background:#{$color};
+//   }
+// }
+
+.cat-foodanddrink .category, .cat-foodanddrink {
+  color: #FF7D32;
+}
+
+.map .pin.cat-foodanddrink, .cat-foodanddrink .image:after {
+  background: #FF7D32;
+}
+
+.cat-outdoors .category, .cat-outdoors {
+  color: #3DD439;
+}
+
+.map .pin.cat-outdoors, .cat-outdoors .image:after {
+  background: #3DD439;
+}
+
+.cat-people .category, .cat-people {
+  color: #2A4CA7;
+}
+
+.map .pin.cat-people, .cat-people .image:after {
+  background: #2A4CA7;
+}
+
+.cat-poi .category, .cat-poi {
+  color: #9F3BE4;
+}
+
+.map .pin.cat-poi, .cat-poi .image:after {
+  background: #9F3BE4;
+}
+
+.cat-shopping .category, .cat-shopping {
+  color: #EB1F3F;
+}
+
+.map .pin.cat-shopping, .cat-shopping .image:after {
+  background: #EB1F3F;
+}
+
+.cat-travel .category, .cat-travel {
+  color: #1DADC1;
+}
+
+.map .pin.cat-travel, .cat-travel .image:after {
+  background: #1DADC1;
+}

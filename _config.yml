@@ -1,0 +1,20 @@
+title: "Studio Upleft"
+
+sass:
+    sass_dir: /r/css/_scss/
+
+collections:
+  projects:
+    output: true
+
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: "project"
+
+exclude: [Gemfile,Gemfile.lock]
+
+markdown: kramdown
+highlighter: rouge

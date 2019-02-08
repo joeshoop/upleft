@@ -1,0 +1,107 @@
+// 
+// Type Sizes
+//
+
+@mixin font-size-3 {
+	font-size:2.5rem;
+}
+
+@mixin font-size-2 {
+	font-size:1.875rem;
+}
+
+@mixin font-size-1 {
+	font-size:1.25rem;
+}
+
+@mixin font-size-0 {
+	font-size:1rem;
+	line-height:1.5;
+}
+
+@mixin font-size--1 {
+	font-size:0.75rem;
+}
+
+@mixin font-size--2 {
+	font-size:0.625rem;
+}
+
+//
+// Type Styles
+//
+
+@mixin font-style-base {
+	color:$color-text;
+    font-family: $base-font-family;
+	font-weight:400;
+	line-height:$base-line-height;
+	@include font-size-0;
+}
+
+@mixin font-style-mono-m {
+	color:$color-text;
+	font-family:$mono-font-family;
+	font-weight:500;
+	@include font-size-0;
+}
+
+@mixin font-style-mono-s {
+	color:$color-text;
+	font-family:$mono-font-family;
+	font-weight:500;
+	@include font-size--1;
+}
+
+@mixin font-style-label {
+	text-transform:uppercase;
+	letter-spacing:0.125em;
+	color:$color-primary;
+	display:block;
+	font-weight:700;
+	@include font-size--2;
+}
+
+
+
+// Headers
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight:500;
+}
+
+h1, .h1 {
+	@include font-size-3	
+}
+
+h2, .h2 {
+	@include font-size-2	
+}
+
+em {
+	font-style: italic;
+}
+
+strong {
+	font-weight:700;
+	font-family:$emphasis-font-family;
+}
+
+blockquote {
+    padding-left:$spacing-4;
+	margin-bottom:$spacing-4;
+	margin-top:$spacing-4;
+	font-style:italic;
+}
+
+code {
+	font-family:$mono-font-family;
+}
+
+.label {
+	@include font-style-label
+}
+
+.caption {
+	@include font-style-mono-s;
+}

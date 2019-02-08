@@ -1,0 +1,513 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width">
+
+	<link rel="shortcut icon" href="static/images/favicon.ico">
+	<link rel="stylesheet" href="static/css/style.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
+	
+	<title>Blix | My Blix</title>
+	
+
+</head>
+<body>
+	
+
+<section class="topbar">
+		<div class="logo">Blix</div>
+		<div class="nav">
+			<ul>
+				<li class="selected"><a href="#">My Blix</a></li>
+				<li class="deselected"><a href="#">Friend's Blix</a></li>
+			</ul>
+		</div>
+		<div class="account">
+			<a href="#">
+				<span id="name">Joe</span>
+				<span id="avatar"></span>
+			</a>
+		</div>
+</section>
+
+	<section class="content">
+
+		<section class="sidebar">
+
+			<div class="search">
+				<ul class="tags">
+					<li class="tag cat-foodanddrink"><a href="#" title="Food & Drink"><span>Food & Drink</span></a></li>
+					<li class="tag"><a href="#" title="Seattle"><span>Seattle</span></a></li>
+					<!-- <li class="tag"><a href="#" title="Long Name to See what happens if the tag is extraordinarliy long. You can still hover to see the full title."><span>Long Name to See what happens if the tag is extraordinarliy long. You can still hover to see the full title.</span></a></li> -->
+					<li id="addfilters"><a href="#"><span>Add Filters</span></a></li>
+				</ul>
+				<ul class="sectionheader">
+					<li class="row">
+						<a class="sort" href="#">32 Blixs by Distance</a>
+						<a class="select" href="#">Select</a>
+						<!-- <ul>
+						<li class="selected"><a href="#">Distance</a></li>
+						<li><a href="#">Recent</a></li>
+						<li><a href="#">A-Z</a></li>
+					</ul> -->
+				</li>
+			</ul>
+			</div>
+
+			<div class="selectbar">
+				<a class="cancel" href="#">Cancel</a>
+				<a class="selectall" href="#">Select All</a>
+			</div>
+
+			<div class="actionbar">
+				<div class="actions">
+					<span class="favorite"><a href="#"><img class="svg" src="static/images/icon-favorite.svg" alt="Favorite"/></a></span>
+					<span class="share"><a href="#"><img class="svg" src="static/images/icon-share.svg" alt="Share"/></a></span>
+					<span class="save"><a href="#">Save</a></span>
+				</div>
+			</div>
+
+			<ul class="list">
+				<!-- start list row template here -->
+				<li data-name="waystation-coffee" class="row">
+					<div class="check"></div>
+					<a class="card cat-poi" href="#">
+						<div class="placeholder image"><img src="static/images/thumbnail-placeholder.png" /></div>
+						<div class="content">
+							<h2 class="title">Waystation Coffee</h2>
+							<h3 class="location">Seattle, WA <span class="category">Points of Interest</span></h3>
+							<div class="meta">
+								<span class="date">Jul 17</span>
+								<span class="author">Joe Shoop</span>
+								<span class="privacy meonly"><img class="svg" src="static/images/icon-small-privacy-meonly.svg" alt="Private"/></span>
+							</div>
+						</div>
+					</a>
+				</li>
+				<!-- end list row template here -->
+
+				<li data-name="ballard-coffee-works" class="row">
+					<div class="check"></div>
+					<a class="card cat-foodanddrink" href="#">
+						<div class="placeholder image"><img src="static/images/thumbnail-placeholder.png" /></div>
+						<div class="content">
+							<h2 class="title">Ballard Coffee Works</h2>
+							<h3 class="location">Seattle, WA <span class="category">Food & Drink</span></h3>
+							<div class="meta">
+								<span class="date">Jul 17</span>
+								<span class="author">Joe Shoop</span>
+								<span class="privacy friends"><img class="svg" src="static/images/icon-small-privacy-friends.svg" alt="Shared with 2 Friends"/>2</span>
+							</div>
+						</div>
+					</a>
+				</li>
+
+				<li data-name="toast" class="row">
+					<div class="check"></div>
+					<a class="card cat-shopping" href="#">
+						<div class="placeholder image"><img src="static/images/thumbnail-placeholder.png" /></div>
+						<div class="content">
+							<h2 class="title">Toast</h2>
+							<h3 class="location">Seattle, WA <span class="category">Shopping</span></h3>
+							<div class="meta">
+								<span class="date">Jul 17</span>
+								<span class="author">Joe Shoop</span>
+								<span class="privacy everyone"><img class="svg" src="static/images/icon-small-privacy-everyone.svg" alt="Public - 4 Saves"/>4</span>
+							</div>
+						</div>
+					</a>
+				</li>
+
+				<li data-name="the-anchored-ship" class="row">
+					<div class="check"></div>
+					<a class="card cat-foodanddrink" href="#">
+						<div class="placeholder image"><img src="static/images/thumbnail-placeholder.png" /></div>
+						<div class="content">
+							<h2 class="title">The Anchored Ship</h2>
+							<h3 class="location">Seattle, WA <span class="category">Food & Drink</span></h3>
+							<div class="meta">
+								<span class="date">Jul 17</span>
+								<span class="author">Joe Shoop</span>
+								<span class="privacy friends"><img class="svg" src="static/images/icon-small-privacy-friends.svg" alt="Shared with Friends"/></span>
+							</div>
+						</div>
+					</a>
+				</li>
+
+				<li data-name="cafe-fiore" class="row">
+					<div class="check"></div>
+					<a class="card cat-foodanddrink" href="#">
+						<div class="placeholder image"><img src="static/images/thumbnail-placeholder.png" /></div>
+						<div class="content">
+							<h2 class="title">Cafe Fiore</h2>
+							<h3 class="location">Seattle, WA <span class="category">Food & Drink</span></h3>
+							<div class="meta">
+								<span class="date">Jul 17</span>
+								<span class="author">Joe Shoop</span>
+								<span class="privacy friends"><img class="svg" src="static/images/icon-small-privacy-friends.svg" alt="Shared with Friends - 2 Saves"/>2</span>
+							</div>
+						</div>
+					</a>
+				</li>
+
+				<li data-name="bauhaus-ballard" class="row">
+					<div class="check"></div>
+					<a class="card cat-foodanddrink" href="#">
+						<div class="placeholder image"><img src="static/images/thumbnail-placeholder.png" /></div>
+						<div class="content">
+							<h2 class="title">Bauhaus Ballard</h2>
+							<h3 class="location">Seattle, WA <span class="category">Food & Drink</span></h3>
+							<div class="meta">
+								<span class="date">Jul 17</span>
+								<span class="author">Joe Shoop</span>
+								<span class="privacy friends"><img class="svg" src="static/images/icon-small-privacy-friends.svg" alt="Shared with Friends - 1 Save"/>1</span>
+							</div>
+						</div>
+					</a>
+				</li>
+				<li data-name="waystation-coffee-2" class="row">
+					<div class="check"></div>
+					<a class="card cat-foodanddrink" href="#">
+						<div class="placeholder image"><img src="static/images/thumbnail-placeholder.png" /></div>
+						<div class="content">
+							<h2 class="title">Waystation Coffee</h2>
+							<h3 class="location">Seattle, WA <span class="category">Food & Drink</span></h3>
+							<div class="meta">
+								<span class="date">Jul 17</span>
+								<span class="author">Joe Shoop</span>
+								<span class="privacy friends"><img class="svg" src="static/images/icon-small-privacy-friends.svg" alt="Shared with Friends - 2 Saves"/>2</span>
+							</div>
+						</div>
+					</a>
+				</li>
+
+				<li data-name="ballard-coffee-works-2" class="row">
+					<div class="check"></div>
+					<a class="card cat-travel" href="#">
+						<div class="placeholder image"><img src="static/images/thumbnail-placeholder.png" /></div>
+						<div class="content">
+							<h2 class="title">Ballard Coffee Works</h2>
+							<h3 class="location">Seattle, WA <span class="category">Travel</span></h3>
+							<div class="meta">
+								<span class="date">Jul 17</span>
+								<span class="author">Joe Shoop</span>
+								<span class="privacy friends"><img class="svg" src="static/images/icon-small-privacy-friends.svg" alt="Shared with Friends - 2 Saves"/>2</span>
+							</div>
+						</div>
+					</a>
+				</li>
+
+				<li data-name="toast-2" class="row">
+					<div class="check"></div>
+					<a class="card cat-foodanddrink" href="#">
+						<div class="placeholder image"><img src="static/images/thumbnail-placeholder.png" /></div>
+						<div class="content">
+							<h2 class="title">Toast</h2>
+							<h3 class="location">Seattle, WA <span class="category">Food & Drink</span></h3>
+							<div class="meta">
+								<span class="date">Jul 17</span>
+								<span class="author">Joe Shoop</span>
+								<span class="privacy friends"><img class="svg" src="static/images/icon-small-privacy-friends.svg" alt="Shared with Friends - 3 Saves"/>3</span>
+							</div>
+						</div>
+					</a>
+				</li>
+
+				<li data-name="the-anchored-ship-2" class="row">
+					<div class="check"></div>
+					<a class="card cat-foodanddrink" href="#">
+						<div class="placeholder image"><img src="static/images/thumbnail-placeholder.png" /></div>
+						<div class="content">
+							<h2 class="title">The Anchored Ship</h2>
+							<h3 class="location">Seattle, WA <span class="category">Food & Drink</span></h3>
+							<div class="meta">
+								<span class="date">Jul 17</span>
+								<span class="author">Joe Shoop</span>
+								<span class="privacy friends"><img class="svg" src="static/images/icon-small-privacy-friends.svg" alt="Shared with Friends"/></span>
+							</div>
+						</div>
+					</a>
+				</li>
+
+				<li data-name="cafe-fiore-2" class="row">
+					<div class="check"></div>
+					<a class="card cat-foodanddrink" href="#">
+						<div class="placeholder image"><img src="static/images/thumbnail-placeholder.png" /></div>
+						<div class="content">
+							<h2 class="title">Cafe Fiore</h2>
+							<h3 class="location">Seattle, WA <span class="category">Food & Drink</span></h3>
+							<div class="meta">
+								<span class="date">Jul 17</span>
+								<span class="author">Joe Shoop</span>
+								<span class="privacy friends"><img class="svg" src="static/images/icon-small-privacy-friends.svg" alt="Shared with Friends"/></span>
+							</div>
+						</div>
+					</a>
+				</li>
+
+				<li data="bauhaus-ballard-2" class="row">
+					<div class="check"></div>
+					<a class="card cat-foodanddrink" href="#">
+						<div class="placeholder image"><img src="static/images/thumbnail-placeholder.png" /></div>
+						<div class="content">
+							<h2 class="title">Bauhaus Ballard</h2>
+							<h3 class="location">Seattle, WA <span class="category">Outdoors</span></h3>
+							<div class="meta">
+								<span class="date">Jul 17</span>
+								<span class="author">Joe Shoop</span>
+								<span class="privacy friends"><img class="svg" src="static/images/icon-small-privacy-friends.svg" alt="Shared with Friends"/></span>
+							</div>
+						</div>
+					</a>
+				</li>
+			</ul> <!-- list block -->
+		</section>
+
+		<section class="map">
+
+			<!-- <div class="peek">
+				<a class="card cat-foodanddrink" href="#">
+					<div class="image"><img src="http://fillmurray.com/250/350" /></div>
+					<div class="content">
+						<h2 class="title">Bauhaus Ballard</h2>
+						<h3 class="location"><span class="category">Food & Drink</span> Seattle, WA</h3>
+						<div class="meta">
+							<span class="date">Jul 17</span>
+							<span class="author">Joe Shoop</span>
+							<span class="privacy friends"><img class="svg" src="static/images/icon-small-privacy-friends.svg" alt="Shared with Friends"/></span>
+						</div>
+					</div>
+				</a>
+			</div> -->
+
+			<a href="#" class="button-create">
+				<img class="svg" src="static/images/icon-createnew.svg" />
+				<span>Create a New Blix</span>
+			</a>
+
+			<a href="#" data-name="waystation-coffee" class="pin cat-poi">
+					<span>Waystation Coffee</span> <!-- titles will need to be truncated. Max Characters is around 20, or 200px wide-->
+			</a>
+
+			<a href="#" data-name="ballard-coffee-works" class="pin pin2 cat-foodanddrink">
+				<span>Ballard Coffee Works</span>
+			</a>
+		</section>
+
+	</section>
+
+	<section class="detail">
+		<div class="bg-dark"></div>
+		<div class="wrap">
+			<div class="actionbar">
+				<div class="meta">
+					<span class="date">Jul 17</span>
+					<span class="author">Joe Shoop</span>
+					<span title="Public - 4 Saves" class="privacy everyone"><img class="svg" src="static/images/icon-small-privacy-everyone.svg"/>4</span>
+				</div>
+				<div class="actions">
+					<span class="favorite"><a href="#"><img class="svg" src="static/images/icon-favorite.svg" alt="Favorite"/></a></span>
+					<span class="share"><a href="#"><img class="svg" src="static/images/icon-share.svg" alt="Share"/></a></span>
+					<span class="directions"><a href="#"><img class="svg" src="static/images/icon-directions.svg" alt="Get Directions"/></a></span>
+					<span class="save"><a href="#">Save This Blix</a></span>
+				</div>
+			</div>
+			<div class="content">
+				<h1 class="title">Cool View at Discovery Park</h1>
+				<p class="location">Near 3201 NW Market St</p>
+				<p class="location">Seattle, WA</p>
+
+				<ul class="tags">
+					<li class="cat-outdoors"><a href="#">Outdoors</a></li>
+					<li><a href="#">Seattle Parks</a></li>
+				</ul>
+
+				<span class="meta">Notes</span>
+				<p class="notes">A nice bench to sit and watch the Sun set!</p>
+
+				<ul class="images">
+					<li><img src="static/images/discoverypark.jpg" /></li>
+				</ul>
+			</div>
+		</div>
+	</section>
+
+	<section class="download">
+		<img class="logo" src="/static/images/blixlogo.svg" alt="Blix" />
+		<p>Remember all of your favorite places</p>
+		<a class="button" href="#">
+			<img src="/static/images/button-appstore.svg" alt="Download on the App Store" />
+		</a>
+
+	</section>
+
+
+
+	
+	<script src="//code.jquery.com/jquery.min.js"></script>
+	<script src="/static/js/main.js"></script>
+	
+</body>
+
+<script>
+
+/*
+Click on Cards or pin to open detail. Click outside of detail to close it. Positioning needs to be applied before the animation. Currently scales out of previously clicked element. Fix it.
+
+Commenting some stuff out for the demo version
+*/
+
+	$(".list .row, .pin").click(function () {
+
+		if ($('.selectbar').hasClass('on')) {
+			$(this).toggleClass('selected'); // If in select mode, clicking anywhere on a row selects it
+		}
+
+		else {
+			/*
+			This code is meant to animate the detail out from the clicked element. It needs some more love to get it working as intended.
+
+			var $this = $(this);
+			var offset = $this.offset(); // get position
+			var width = $this.outerWidth(); // get width
+			var height = $this.outerHeight(); // get height
+
+			var centerX = offset.left + width / 2; // set horizontal center of clicked element
+			var centerY = offset.top + height / 2; // set vertical center of clicked element
+
+			var styles = {'top':centerY,'left':centerX}
+			$(".wrap").css(styles); // add position style to .wrap
+
+			*/
+
+			$(".detail").addClass('show'); // Open Detail
+		}
+
+	});
+
+	$(".bg-dark").click(function () {
+		$(".detail").removeClass('show'); // Close Detail
+		$(".detail").scrollTop(0); // Scroll the detail back to the top so it opens unscrolled the next time
+	});
+
+	$("a.select").click(function () {
+		$(".list").toggleClass('select');
+		$(".selectbar, .sidebar .actionbar").addClass('on');
+		$(this).addClass('off');
+
+	});
+
+	$(".cancel").click(function (){
+		$(".row").removeClass('selected');
+		$(".selectbar, .sidebar .actionbar").removeClass('on');
+		$(".list").removeClass('select');
+		$(".select, .tags").removeClass('off');
+	});
+
+	$(".check").click(function () {
+		$(this).parent().toggleClass('selected');
+	});
+
+	$(".selectall").click(function () {
+
+		$(this).toggleClass('true');
+
+		var text = $(this).text();
+
+		if ( $(this).hasClass('true') ) {
+			$(".search ~ ul > li.row").addClass('selected');
+			$(this).text('Deselect All');
+		}
+
+		else {
+			$(".search ~ ul > li.row").removeClass('selected');
+			$(this).text('Select All');
+		}
+
+	});
+
+	$('.row, .pin').hover(function () { // Hovering on the list applies a hover state to the associated pin, and vice versa
+
+		var matches = $(this).data('name');
+
+		// alert(matches);
+
+		$('[data-name="'+matches+'"]').toggleClass('hovered');
+
+	});
+
+</script>
+
+<script>
+/*
+*	Set margin on top of the list to match height of static top bar
+*/
+
+$(document).ready(function() {
+
+	var margin = $(".search").outerHeight();
+
+	$(".search ~ ul > li.row:first-child").css("margin-top",margin);
+
+	var resized = false;
+
+	$(window).resize(function() {
+		resized = true;
+	});
+
+	setInterval(function() {
+		if ( resized ) {
+			resized = false;
+
+			var margin = $(".search").outerHeight();
+
+			$(".search ~ ul > li.row:first-child").css("margin-top",margin);
+
+		}
+	}, 250);
+
+});
+
+</script>
+
+<script>
+
+/*
+* Replace all SVG images with inline SVG
+*/
+
+jQuery('img.svg').each(function(){
+	var $img = jQuery(this);
+	var imgID = $img.attr('id');
+	var imgClass = $img.attr('class');
+	var imgURL = $img.attr('src');
+
+	jQuery.get(imgURL, function(data) {
+		// Get the SVG tag, ignore the rest
+		var $svg = jQuery(data).find('svg');
+
+		// Add replaced image's ID to the new SVG
+		if(typeof imgID !== 'undefined') {
+			$svg = $svg.attr('id', imgID);
+		}
+		// Add replaced image's classes to the new SVG
+		if(typeof imgClass !== 'undefined') {
+			$svg = $svg.attr('class', imgClass+' replaced-svg');
+		}
+
+		// Remove any invalid XML tags as per http://validator.w3.org
+		$svg = $svg.removeAttr('xmlns:a');
+
+		// Replace image with new SVG
+		$img.replaceWith($svg);
+
+	}, 'xml');
+
+});
+
+</script>
+</html>

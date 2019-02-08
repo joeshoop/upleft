@@ -1,0 +1,20 @@
+<html>
+{% include utility-head.html %}
+{% include utility-base.html %}
+{% assign current = page.url | downcase | split: '/' %}
+{% if page.url == "/"  %}
+	{% assign current = "home" %}
+{% else %}
+	{% assign current = page.url | remove: "index.html" | remove: "/projects/" | remove: "/" %}
+{% endif %}
+<body class="page-{{ current }}">
+<div class="page-container">
+	{% include template-header.html %}
+	<div class="content">
+			{{ content }}
+	</div>
+	{% include template-footer.html %}
+	{% include utility-scripts.html %}
+</div>
+</body>
+</html>
