@@ -1,9 +1,38 @@
----
-layout: default
----
-<div class="project-container">
-    {{ content }}
-</div>
-
-{% include template-nextproject.html %}
-{% include template-moreprojects.html %}
+<!DOCTYPE html>
+<html lang="en">
+  {% include head.html %}
+  <body>
+    <div class="m-scene" id="main">
+      <main id="page-{{ current }}" data-background="{{ page.background-color | default: 'rgba(0,0,0,1)' }}">
+        {% include header.html %}
+        <section id="content" class="scene_element scene_element-fadeIn">
+          <div class="project-header" style="{{page.header-under}}">
+            <div class="container project-header-container">
+                <div class="project-meta-container">
+                    <div class="project-title">
+                        <h1>{{page.subtitle}}</h1>
+                    </div>
+                    <div class="project-subtitle">
+                        <p>{{page.title}}</p>
+                    </div>
+                    <div class="project-skills">
+                      <ul>
+                      {% for item in page.details %}
+                          <li>{{item}}</li>
+                      {% endfor %}
+                      </ul>
+                    </div>
+                </div>
+            </div>
+          </div>
+          {{ content }}</div>
+          {% include template-nextproject.html %}
+          {% include template-moreprojects.html %}
+          {% include footer.html %}
+        </section>
+      </main>
+      <div class="transition-background"></div>
+    </div>
+    {% include scripts.html %}
+  </body>
+</html>

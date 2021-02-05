@@ -1,0 +1,129 @@
+.draggable {
+
+	&-handle {
+		position: absolute;
+		padding:2rem;
+		border:1px solid rgba(0,255,255,1);
+		white-space: nowrap;
+
+		// Stop text from sometimes appearing selected while dragging
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+
+		// Center Element on 0,0 coordinate
+		// transform:translateY(-50%) translateX(-50%);
+
+		-webkit-transition: box-shadow, margin 200ms cubic-bezier(0.215, 0.61, 0.355, 1);
+		transition:         box-shadow, margin 200ms cubic-bezier(0.215, 0.61, 0.355, 1);
+
+
+		&:hover {
+			background:rgba(0,255,255,.1);
+			cursor:move;
+		}
+
+		&:active {
+			background:transparent;
+			z-index:10000;
+			margin-top:-4px;
+			// box-shadow:0 20px 40px 0 rgba(0,0,0,.2);
+			border:1px solid rgba(0,255,255,1);
+			background:rgba(0,255,255,.2);
+		}
+
+
+		// Replace these with position set by js
+		&.typography {
+			top:25%;
+			left:35%;
+		}
+
+		&.color {
+			top:64%;
+			left:12%;
+		}
+
+		&.art-direction {
+			top:75%;
+			left:69%;
+		}
+
+	}
+
+	&-directions {
+
+		li {
+			position:absolute;
+			color:black;
+			list-style-type: none;
+			text-align:center;
+		}
+
+		.label {
+			padding:.5rem;
+			display:inline-block;
+			background:yellow;
+		}
+
+		.up {
+			bottom:calc(100% + 10px);
+			left:0;
+			right:0;
+			width:100%;
+		}
+
+		.right {
+			left:calc(100% + 10px);
+			top:0;
+			bottom:0;
+			height:100%;
+			display:grid;
+			align-items: center;
+		}
+
+		.down {
+			top:calc(100% + 10px);
+			left:0;
+			right:0;
+			width:100%;
+		}
+
+		.left {
+			right:calc(100% + 10px);
+			top:0;
+			bottom:0;
+			height:100%;
+			display:grid;
+			align-items: center;
+		}
+	}
+
+	&-handle:not(:hover) &-directions {visibility:hidden;}
+
+}
+
+.cursor-x, .cursor-y {
+	position:absolute;
+	background:cyan;
+	pointer-events:none;
+}
+
+.cursor-x {
+	width:1px;
+	height:100%;
+	top:0;
+	left:50%;
+}
+
+.cursor-y {
+	width:100%;
+	height:1px;
+	top:50%;
+	left:0;
+}
+
+.edge-error {
+	border:1px solid red !important;
+}

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48px" height="48px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>close</title>
+    <g id="Portfolio" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Blix" transform="translate(-144.000000, -60.000000)">
+            <g id="close" transform="translate(144.000000, 60.000000)">
+                <rect id="background" fill="#FFFFFF" x="0" y="0" width="48" height="48" rx="24"></rect>
+                <path d="M33,13.8786797 L35.1213203,16 L26.6206797,24.4996797 L35.1213203,33 L33,35.1213203 L24.4996797,26.6206797 L16,35.1213203 L13.8786797,33 L22.3786797,24.4996797 L13.8786797,16 L16,13.8786797 L24.4996797,22.3786797 L33,13.8786797 Z" id="X" fill="#000000" fill-rule="nonzero"></path>
+            </g>
+        </g>
+    </g>
+</svg>

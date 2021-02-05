@@ -2,23 +2,28 @@
 // next-project.scss
 
 .next-project {
-    border-top:2px solid $color-border;
-    border-bottom:2px solid $color-border;
-    margin-top:$spacing-5;
+    background:black;
+    color:white;
+    padding:10vw 0;
 
     a {
-        display:block;
-        padding-top:$spacing-5;
-        padding-bottom:$spacing-5;
-        color:$color-text;
         text-decoration:none;
-
-        &:hover {
-            background:lighten($color-background, 8%);
-        }
+        position:relative;
+        display:block;
+        transition:200ms $animation-timing-function;
     }
 
-    h2 {
-        @include font-style-mono-m;
+    a h1 {
+        text-decoration:underline;text-decoration-skip-ink: none;
+        text-decoration-skip: none;
+        text-decoration-thickness: 0.05em;
+        transition: text-decoration-thickness 100ms $animation-timing-function;
+    }
+    a:hover h1 {
+        text-decoration-thickness: 0.125em;
+    }
+
+    .next-project-subtitle {
+        text-decoration:none;
     }
 }

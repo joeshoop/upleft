@@ -1,0 +1,51 @@
+html {
+  // cursor:none; // this still results in a cursor showing up at the bottom of the page because rellax scrolling stuff happens
+  }
+
+  // Turning this all off for now - there is a bad 
+  // bug in Firefox that results in the cursor 
+  // disappearing when you hover over the dock, and 
+  // staying hidden until you click on the top menu 
+  // bar in macOS
+
+a {
+    // cursor:none;
+  }
+
+.cursor-container {
+  position:fixed;
+  top:0;
+  left:0;
+  z-index:1000;
+}
+
+.cursor {
+  background:currentColor;
+  border-radius: 1vw;
+  pointer-events: none;
+  position:absolute;
+  transform:translate3d(-50%, -50%, 0);
+  transition:all 200ms cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.cursor-content {
+  font-size:0;
+  opacity:0;
+  padding:1vw;
+  position:relative;
+  line-height:1;
+  text-align:left;
+  transform-origin:50% 50%;
+  transition:all 200ms cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.cursor.hovering {
+  //   background:rgba(0,0,0,0);
+  border-radius:0;
+  box-shadow:0 10px 30px rgba(0,0,0,0.2);
+}
+.cursor.hovering > .cursor-content {
+  display:block;
+  opacity:1;
+  padding:1vw;
+}

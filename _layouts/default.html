@@ -1,20 +1,18 @@
-<html>
-{% include utility-head.html %}
-{% include utility-base.html %}
-{% assign current = page.url | downcase | split: '/' %}
-{% if page.url == "/"  %}
-	{% assign current = "home" %}
-{% else %}
-	{% assign current = page.url | remove: "index.html" | remove: "/projects/" | remove: "/" %}
-{% endif %}
-<body class="page-{{ current }}">
-<div class="page-container">
-	{% include template-header.html %}
-	<div class="content">
-			{{ content }}
-	</div>
-	{% include template-footer.html %}
-	{% include utility-scripts.html %}
-</div>
-</body>
+<!DOCTYPE html>
+<html lang="en">
+  {% include head.html %}
+  <body>
+    <div class="m-scene" id="main">
+      <main id="page-{{ current }}" data-background="{{ page.background-color | default: 'rgba(0,0,0,1)' }}">
+        {% include header.html %}
+        <section id="content" class="scene_element scene_element-fadeIn">
+          {{ content }}</div>
+          {% include template-moreprojects.html %}
+          {% include footer.html %}
+        </section>
+      </main>
+      <div class="transition-background"></div>
+    </div>
+    {% include scripts.html %}
+  </body>
 </html>

@@ -6,78 +6,156 @@
 
 html,body {
   min-height:100%;
-  @include font-style-base;
 }
 
 body {
-  // background:repeating-linear-gradient(transparent, transparent 16px, #9198e5 16px, #9198e5 17px);
-  background:$color-background;
   margin:$spacing-0;
-  padding:$page-spacing;
+  padding:$spacing-0;
+  overflow-x: hidden;
 }
 
-a {
-  color:currentColor;
+.container {
+  max-width:1630px;
+  margin:0 auto;
+  width:calc(100% - 2rem);
+  
+  @media ($break-s) {
+    width:calc(100% - 4rem);
+  }
+
+  @media ($break-l) {
+    width:calc(100% - 8rem);
+  }
 }
 
-.full-width {
-  margin-left:    -$page-spacing;
-  margin-right:   -$page-spacing;
-  padding-left:   $page-spacing;
-  padding-right:  $page-spacing;
+.main section {
+  display:flex;
+  justify-content:center;
 }
 
-.col.fluid {
-  width:100%;
+#page-home {
+  background:radial-gradient(150vw 200vh at top left, #FF9800 0%, #8B7510 29%, #2C4F0A 51%, #052136 74%, #0E0B29 91%, #000000 100%);
+  color:$color-foreground;
+  padding-top:1px;
 }
 
-@import "components/header";
-@import "components/details-box";
-@import "components/project-list";
-@import "components/project-page";
-@import "components/next-project";
-@import "components/more-projects";
-@import "components/footer";
+{% for project in site.work %}
+{% if project.background-color or project.foreground-color %}
 
-// Styling for custom colors per project
-// Jekyll only parses liquid in the main scss file
-
-{% for project in site.projects %}
-{% assign projectClass = project.url | remove: "index.html" | remove: "/projects/" | remove: "/" %}
-
-.project-{{ projectClass }} {
-
-  a {
-    color: {{ project.color }}
+  #page-{{ project.slug }} { 
+    {% if project.background-color %}background-color: {{ project.background-color }};{% endif %}
+    {% if project.foreground-color %}color: {{ project.foreground-color }};{% endif %}
   }
 
+  #page-{{ project.slug }} a { 
+    {% if project.highlight-color %}text-decoration-color: {{ project.highlight-color }};{% endif %}
+  }
+
+  // {% if project.highlight-color %}
+  // #page-{{ project.slug }} .project-container h3{ 
+  //   color: {{ project.highlight-color }};
+  // }
+  {% endif %}
+
+
+{% endif %}
+{% if project.logo-color %}
+#page-{{ project.slug }} .eye-logo #symbol {
+  fill:{{ project.logo-color }};
 }
+{% endif %}
+{% endfor %}
 
-.page-{{ projectClass }} {
+// .fluid {
+//   width:100%;
+// }
 
-  strong {
-    color:{{ project.color }};
+
+.breakpoints {
+  position:fixed;
+  top:0;
+  left:0;
+  background:red;
+  z-index:1000;
+  & > div {
+    display:none;
   }
-
-  .primary-navigation .current {
-    border-color:{{ project.color }};
+  @media ($break-xs) {
+    .bp-xs {
+      display:inline-block;
+    }
   }
-
-  .StudioUpleft-Logo {
-    fill:{{ project.color }};
+  @media ($break-s) {
+    .bp-xs {
+      display:none;
+    }
+    .bp-s {
+      display:inline-block;
+    }
   }
-
-  .label {
-    color:{{ project.color }};
+  @media ($break-m) {
+    .bp-s {
+      display:none;
+    }
+    .bp-m {
+      display:inline-block;
+    }
   }
-
-  .project-container a {
-    &:hover {
-      color:{{ project.color }};
+  @media ($break-l) {
+    .bp-m {
+      display:none;
+    }
+    .bp-l {
+      display:inline-block;
     }
   }
 }
 
-{% endfor %}
+.grid {
+  display:grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-column-gap: 1vw;
 
+  @media ($break-l) {
+    grid-column-gap: 1rem;
+  }
+}
 
+.section-title {
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+}
+
+.mb-6 {
+  margin-bottom:10vw;
+
+  @media ($break-l) {
+    margin-bottom:6rem;
+  }
+}
+
+.pb-6 {
+  margin-bottom:10vw;
+
+  @media ($break-l) {
+    margin-bottom:6rem;
+  }
+}
+
+.transition-background {
+  position:fixed;
+  top:0;
+  left:0;
+  width:100vw;
+  height:400vh;
+  z-index:-10;
+}
+
+@import "components/header";
+@import "components/primary-navigation";
+@import "components/artifact-grid";
+@import "components/project-page";
+@import "components/next-project";
+@import "components/more-projects";
+@import "components/footer";

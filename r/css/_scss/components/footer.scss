@@ -2,11 +2,7 @@
 // footer.scss
 
 .footer {
- display:flex;
- flex-direction: row;
- align-items:center;
-
- .details-box {
-     margin-left:$spacing-4;
- }
+    background:black;
+    color:white;
+    padding:$page-spacing 0;
 }

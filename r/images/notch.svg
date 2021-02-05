@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="375px" height="44px" viewBox="0 0 375 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 64 (93537) - https://sketch.com -->
+    <title>Notch/Top/Black Status Bar</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Notch/Top/Black-Status-Bar" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Status-Bar-Black">
+            <rect id="Base" x="0" y="0" width="375" height="44"></rect>
+        </g>
+        <path d="M297.777895,0 C294.803214,0 292.354186,2.33876265 292.217246,5.31029 C291.469503,21.5354301 283.223073,29.7291259 267.477956,29.8913773 L266.998536,29.8938356 L186.999105,29.987 L108.001465,29.8938356 C91.9442873,29.8938356 83.5380506,21.6993204 82.7827548,5.31029 C82.6458144,2.33876265 80.1967866,0 77.2221055,0 L297.777895,0 Z" id="Path" fill="#000000"></path>
+    </g>
+</svg>

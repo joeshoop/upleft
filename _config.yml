@@ -1,10 +1,16 @@
 title: "Studio Upleft"
 
+url: "http://upleft.com"
+
 sass:
     sass_dir: /r/css/_scss/
 
 collections:
-  projects:
+  work:
+    title: Work
+    output: true
+  categories:
+    title: Categories
     output: true
 
 defaults:

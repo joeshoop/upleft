@@ -2,18 +2,25 @@
 layout: default
 title: About
 permalink: /about/
+background-color: 'rgba(255,255,255,1)'
 ---
+## Studio Upleft is the design practice of Joe Shoop, an independent product designer making it work in socially distanced Seattle, WA.
 
-Studio Upleft is a small digital product design studio in Seattle, WA, and is the work of designer Joe Shoop.
+I have been designing for screens for more than 20 years, starting with a VERY COOL geocities website that most definitely had at least one spooky rotating skull gif.
 
-Joe designed his first website in 1998. It wasn't very good.
+> "Very cool and spooky!"
+> — My Mom, probably
 
-Before going independent in 2014, Joe worked as a designer at Big Fish Games for a few years, then for another few years as a visual designer at Übermind (now known as Deloitte Digital) on projects for Target and Showtime, among others. He graduated with a bachelor's degree in Art/Design from Western Washington University, and now lives in Seattle.
+Since that early peak, I have worked as a designer with a wide variety of brands on a wide variety of projects, including such hits as [a touchscreen photobooth for Starbucks](#), [Target’s first ever iPad app](#), or more recently, a [daily fantasy sports game](#), and [a design system and website for Shoreline Community College](#), among [other things](#).
 
-with an interest in [calm technology](https://calmtech.com/index.html).
+I am currently doing project-based client work, and am particularly interested in working on tools rather than feeds. If you or your company prioritizes accessibility, inclusion, and sustainability, I'd love to hear from you.
 
-## Lets make something good.
+An interface for VR
+Redesign grocery store self-checkout machines
 
-If you are interested in working together, lets talk!
+<!-- TODO: color the links to projects with the appropriate colors? Should probably just hardcode it, since this won't really change much. -->
 
-[Send me an email](#)
+<!-- TODO: Write better copy. Offer a little more detail about my general point of view. Communicate that I am able to be articulate and specific about having an opinion.-->
+
+<!-- TODO: Add a list of clients -->
+<!-- TODO: Add a list of capabilities -->

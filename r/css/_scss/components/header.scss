@@ -1,27 +1,62 @@
 // Header
 // header.scss
 
-.header, .primary-navigation ul {
+.header {
+  z-index:1000;
+  position:fixed;
+  top:$spacing-4;
+  width:100%;
+}
+
+.logo {
+  width:2rem;
+  margin-right:0.5em;
+}
+
+.nav-home {
+  grid-column:1 / span 4;
+}
+
+.nav-close, .nav-about {
+    grid-column: 7 / span 6;
+    text-align: right;
+}
+
+.nav-home a {
   display:flex;
-  flex-direction: row;
-  justify-content:space-between;
-  align-items:center;
+  flex-direction:row;
+  align-items: center;
+  text-decoration:none;
 }
 
-.StudioUpleft-Logo {
-  fill:$color-primary;
+.nav-home .studioupleft {
+  white-space:nowrap;
 }
 
-.primary-navigation ul li {
-  list-style-type:none;
-  margin-left:2rem;
+// #page-home .nav-home a:after {
+//   display:block;
+//   content:"";
+//   height:0.05em;
+//   width:100%;
+//   margin:0.125em calc(-1vw + 0.125em) 0 0.125em;
+//   background:currentColor;
+//   flex-grow:1;
 
-  a {
-    text-decoration:none;
-    @include font-style-mono-m
+//   @media ($break-l) {
+//     margin:0.125em calc(-1rem + 0.125em) 0 0.125em;
+//   }
+// }
+
+.introtext {
+  display:block;
+  padding-top:0.25rem;
+  grid-column:3 / span 10;
+  
+  @media ($break-s) {
+    grid-column:5 / span 8;
   }
 
-  &.current {
-    border-bottom:2px solid $color-primary;
+  @media ($break-l) {
+    grid-column:6 / span 7;
   }
 }

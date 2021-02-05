@@ -1,0 +1,75 @@
+// PRIMARY NAVIGATION
+// primary-navigation.scss
+
+
+.primary-navigation {
+    // @include text-preset-nav;
+    // position:absolute;
+    left:$spacing-4;
+    right:$spacing-4;
+    display:flex;
+    justify-content:space-between;
+    align-items: flex-start;
+    margin-right:-0.5em;
+
+    @media ($break-s) {
+        margin-right:-1em;
+        left:$page-spacing;
+        right:$page-spacing;
+    }
+
+    .nav-home {
+        max-width:25rem;
+        margin-right:2rem;
+        position:relative;
+    }
+
+    .nav-home a {
+        display:flex;
+        align-items: center;
+    }
+
+    .nav-home .logo {
+        width:2rem;
+        margin-right:0.5em;
+    }
+
+    ul {
+        display:flex;
+        margin:0;
+    }
+  
+    ul li {
+        list-style-type:none;
+        position:relative;
+    }
+
+    .nav-container a {
+        padding:0 0.5em;
+
+        @media ($break-s) {
+            padding:0 1em;
+        }
+    } 
+
+    a { 
+        border:none;
+        text-decoration:none;
+    }
+
+    .current:after, .nav-link a:hover:after, .introtext a:hover:after {
+        background:currentColor;
+        border-radius:4px;
+        bottom:-0.25em;
+        content:"";
+        height:3px;
+        left:50%;
+        position:absolute;
+        transform:translateX(-50%);
+        width:1em;
+    }
+
+    a:hover:after {
+        opacity:0.5;
+    }
+}

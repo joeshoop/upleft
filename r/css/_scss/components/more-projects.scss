@@ -1,33 +1,22 @@
 // More Projects
 // more-projects.scss
 
-.more-projects {
-    padding-top:$spacing-5;
-    padding-bottom:$spacing-4;
-    margin-bottom:$spacing-4;
+#more-projects {
+    padding:$page-spacing 0;
+    background:black;
+    color:white;
+}
 
-    h2 {
-        @include font-style-mono-m;
-    }
+#more-projects .project-meta {
+  display:inline-block;
+  margin-right:1rem;
+  line-height:2;
+}
 
-    li {
-        list-style-type:none;
-    }
+.project-row-moreprojects {
+  grid-column:3 / span 10;
 
-    .projects {
-        margin-top:$spacing-3;
-        display:grid;
-        grid-template-columns:1fr 1fr 1fr;
-        grid-column-gap:$spacing-3;
-    }
-
-    .project {
-        background:white;
-
-        a {
-            display:block;
-            height:15vw;
-            padding:$spacing-3;
-        }
-    }
+  @media ($break-s) {
+    grid-column:2 / span 11;
+  }
 }
