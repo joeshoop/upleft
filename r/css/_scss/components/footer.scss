@@ -4,5 +4,14 @@
 .footer {
     background:black;
     color:white;
-    padding:$page-spacing 0;
+    padding:$page-spacing 0 20vw;
+}
+
+.sayhi {
+    grid-column:1 / span 12;
+
+    @media ($break-s) {
+      grid-column: 3 / span 8;
+      padding: 0 2rem;
+    }
 }

@@ -2,24 +2,51 @@
 // header.scss
 
 .header {
-  z-index:1000;
+  z-index:1100;
   position:fixed;
-  top:$spacing-4;
-  width:100%;
+  transform:translate3d(0,0,10px);
 }
 
-.logo {
-  width:2rem;
-  margin-right:0.5em;
+
+.logo, .close {
+  width:40px;
+  @media ($break-s) {
+    width:2rem;
+  }
+}
+
+.nav-home,
+.nav-close {
+  position:fixed;
+  top:1rem;
+  z-index:1000;
+  
+  @media ($break-s) {
+    top:2rem;
+  }
+
+  a {
+    display:block;
+    text-decoration:none;
+    height:100%;
+    width:100%;
+  }
 }
 
 .nav-home {
-  grid-column:1 / span 4;
+  left:1rem;
+
+  @media ($break-s) {
+    left:2rem;
+  }
 }
 
-.nav-close, .nav-about {
-    grid-column: 7 / span 6;
-    text-align: right;
+.nav-close {
+  right:1rem;
+
+  @media ($break-s) {
+    right:2rem;
+  }
 }
 
 .nav-home a {
@@ -31,32 +58,4 @@
 
 .nav-home .studioupleft {
   white-space:nowrap;
-}
-
-// #page-home .nav-home a:after {
-//   display:block;
-//   content:"";
-//   height:0.05em;
-//   width:100%;
-//   margin:0.125em calc(-1vw + 0.125em) 0 0.125em;
-//   background:currentColor;
-//   flex-grow:1;
-
-//   @media ($break-l) {
-//     margin:0.125em calc(-1rem + 0.125em) 0 0.125em;
-//   }
-// }
-
-.introtext {
-  display:block;
-  padding-top:0.25rem;
-  grid-column:3 / span 10;
-  
-  @media ($break-s) {
-    grid-column:5 / span 8;
-  }
-
-  @media ($break-l) {
-    grid-column:6 / span 7;
-  }
 }

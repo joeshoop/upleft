@@ -1,3 +1,30 @@
+@font-face {
+	font-family: "Sohne Bold";
+	src: url("../fonts/SöhneTest-Dreiviertelfett.otf");
+  }
+
+  @font-face {
+	font-family: "Sohne Book";
+	src: url("../fonts/SöhneTest-Buch.otf");
+  }
+
+  @font-face {
+	font-family: "Tiempos Headline";
+	src: url("../fonts/TiemposHeadlineTest-Medium.otf");
+  }
+
+  @font-face {
+	font-family: "Jetbrains Mono";
+	src: url("../fonts/JetBrainsMono-Regular.woff2");
+  }
+
+  @font-face {
+	font-family: "Jetbrains Italic";
+	src: url("../fonts/JetBrainsMono-Medium-Italic.woff2");
+  }
+
+ 
+
 // 
 // Type Sizes
 //
@@ -6,52 +33,68 @@
 @mixin text-preset-body {
 	font-family:$base-font-family;
 	font-size:1rem;
-	line-height:1.6;
+	line-height:1.45;
 	font-weight:400;
-
-	// 16px at 960px wide
-	@media ($break-s) {
-		line-height:1.5;
-	}
 }
 
-@mixin text-preset-hero {
-	font-family:$headline-font-family;
+@mixin text-preset-header-xxl {
+	font-family:$display-font-family;
 	font-size:2.5rem;
-	font-weight:300;
-	line-height:0.9;
-}
-
-
-@mixin text-preset-header {
-	font-family:$headline-font-family;
-	font-size:3rem;
-	font-weight:300;
-	line-height:0.9;
-	
-
-	@media ($break-s) {
-		font-size:2.25rem;
-	}
-}
-
-@mixin text-preset-subheader {
-	font-family:$headline-font-family;
-	font-size:2rem;
-	font-weight:300;
-	line-height:1.2;
-}
-
-@mixin text-preset-smallcaps {
-	font-family:$headline-font-family;
-	font-size:10px;
-	font-weight:400;
-	letter-spacing: 0.15em;
-	line-height:1.25em;
-	text-transform: uppercase;
+	line-height:1.05;
+	letter-spacing:-0.015em;
 
 	@media ($break-m) {
-		font-size:14px;
+		font-size:3.5rem;
+	}
+}
+
+@mixin text-preset-header-xl {
+	font-family:$display-font-family;
+	font-size:1.875rem;
+	line-height:1.05;
+	letter-spacing:-0.015em;
+
+	@media ($break-m) {
+		font-size:2.5rem;
+	}
+}
+
+@mixin text-preset-header-l {
+	font-family:$headline-font-family;
+	font-size:1.875rem;
+	line-height:1.05;
+	letter-spacing:-0.015em;
+
+	@media ($break-m) {
+		font-size:2.125rem;
+	}
+}
+
+@mixin text-preset-mono {
+	font-family:$mono-font-family;
+	font-weight: 400;
+    font-size: 0.825rem;
+
+	// @media ($break-s) {
+	// 	font-size:1.5rem;
+	// }
+}
+
+@mixin text-preset-mono-caps {
+	font-family:$mono-font-family;
+	letter-spacing: 0.15em;
+	font-weight: 400;
+    font-size: 12px;
+	text-transform:uppercase;
+}
+
+@mixin text-preset-caption {
+	font-family:$base-font-family;
+	font-size:13px;
+	opacity:0.7;
+
+	@media ($break-m) {
+		font-size:0.65rem;
 	}
 }
 
@@ -62,14 +105,14 @@
 //////////////////////////////
 
 html {
-	font-size:12px;
+	font-size:16px;
 
 	@media ($break-xs) {
-        font-size:calc(14px + 12 * ((100vw - 375px) / 1065));
+        font-size:calc(18px + 4 * ((100vw - 375px) / 1065));
 	}
 	
 	@media ($break-xl) {
-        font-size:26px;
+        font-size:22px;
     }
 }
 
@@ -86,45 +129,50 @@ body {
 	-moz-osx-font-smoothing: grayscale; /* Firefox */
 }
 
-.text-preset-hero {
-	@include text-preset-hero;
+.text-preset-header-xxl {
+	@include text-preset-header-xxl;
 }
 
-h1, .text-preset-header {
-	@include text-preset-header;
+h1, .text-preset-header-xl {
+	@include text-preset-header-xl;
 }
 
-h2, .text-preset-subheader {
-	@include text-preset-subheader;
+h2, .text-preset-header-l {
+	@include text-preset-header-l;
 }
 
-h3, .text-preset-smallcaps {
-	@include text-preset-smallcaps;
+h3, .text-preset-mono {
+	@include text-preset-mono;
+}
+
+h4, .text-preset-caption {
+	@include text-preset-caption;
 }
 
 p, .text-preset-body {
 	@include text-preset-body;
 }
 
+.caption, .text-preset-caption {
+	@include text-preset-caption;
+}
+
 h1 + p, 
 h2 + p,
 h3 + p,
+h3 + h2,
 p + p
 {
 	margin-top:0.75rem;
 }
 
 p + h3,
-h2 + h3 {
-	margin-top:2rem;
+h2 + h3,
+h2 + p,
+h3 + ul {
+	margin-top:1rem;
 }
 
-// p + h1,
-// p + h2,
-// p + h3,
-// div + h2 {
-// 	margin-top:4rem;
-// }
 
 strong {
 	opacity:1;
@@ -132,16 +180,9 @@ strong {
 
 a {
 	color:currentColor;
-	text-decoration-skip-ink: none;
-	text-decoration-skip: none;
-	text-decoration-thickness: 0.125rem;
-	transition: text-decoration-thickness 100ms $animation-timing-function;
+	// text-decoration:none;
+	// @include link-underline;
 }
-
-a:hover {
-	text-decoration-thickness: 0.25rem;
-}
-
 
 ul, ol {
 	margin:1em 0 1em 1.125em;

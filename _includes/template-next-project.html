@@ -1,0 +1,47 @@
+<!--
+Next Project
+template-next-project.html
+-->
+{% assign sorted_projects = site.work | sort: "order","last" %}
+{% for project in sorted_projects %}
+
+{% if project.title == page.title %}
+    {% assign currIndex = forloop.index0 %}
+    {% assign nextIndex = currIndex | plus: 1 %}
+    {% assign projectIndexLength = forloop.length | minus: 1 %}
+
+    {% if currIndex < projectIndexLength %}
+        {% assign nextProject = sorted_projects[nextIndex] %}
+        {% elsif currIndex == projectIndexLength %}
+        {% assign nextProject = sorted_projects[0] %}
+    {% endif %}
+<div class="next-project" id="next-project-{{ nextProject.slug }}">
+    <a href="{{ nextProject.url | remove:'index.html'}}" class="next-project-link">
+        <div class="container grid next-project-container">
+            <div class="next-project-content {{ nextProject.slug }}-meta">
+            <div class="next-project-label">
+                <h3>Next Project</h3>
+            </div>
+            <div class="project-client">
+                <p>
+                    {{nextProject.client}}
+                </p>
+            </div>
+            <div class="project-title">
+                <h1 class="text-preset-header-xxl">
+                    {{nextProject.subtitle}}
+                </h1>
+            </div>
+            <div class="project-skills">
+                <h3 class="underliner-container">
+                    <span class="underliner-over">View Case Study</span>
+                    <span class="underliner"></span>
+                </h3>
+            </div>
+            </div>
+        </div>
+    </a>
+    <div class="next-project-background"></div>
+</div>
+{% endif %}
+{% endfor %}

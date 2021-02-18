@@ -1,77 +1,94 @@
 <script src="/r/js/rellax.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="/r/js/jquery.smoothState.min.js"></script>
+<script src="/r/js/barba.core.2.9.7.min.js"></script>
+<script src="/r/js/barba-css.2.1.15.js"></script>
+<script src="/r/js/barba-prefetch.2.1.10.js"></script>
 <script type="text/javascript">
-// Rellax
 
-window.onload = function(){
-  detectScreenSize();
-  if (smallScreen == false){
+// var screenSize;
+// detectScreenSize = function(){
+//   if (window.matchMedia("(min-width: 375px)").matches) {
+//     smallScreen = false
+//   } else {
+//     smallScreen = true
+//   }
+//   console.log("Small screen:" + smallScreen);
+// };
+
+// First we get the viewport height and we multiple it by 1% to get a value for a vh unit
+let vh = window.innerHeight * 0.01;
+// Then we set the value in the --vh custom property to the root of the document
+document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+
+reloadRellax = function(){
+  // detectScreenSize();
+  // if (smallScreen == false){
     var rellax = new Rellax('.rellax', {
     breakpoints: [640, 960, 1280],
     center:true
   });
-  }
-}
-
-var screenSize;
-detectScreenSize = function(){
-  if (window.matchMedia("(min-width: 375px)").matches) {
-    smallScreen = false
-  } else {
-    smallScreen = true
-  }
-  console.log("Small screen:" + smallScreen);
+  // };
 };
 
 
+barba.use(barbaPrefetch);
+barba.use(barbaCss);
 
-// SmoothState
+const body = document.querySelector('body');
 
-$(function(){
-  'use strict';
-  var options = {
-    cacheLength: 0,
-    scroll:false,
-    onBefore: function ($currentTarget, $container) {
-      
-    },
-    onStart: {
-      duration: 700, // Duration of our animation
-      render: function ($container) {
-        // Add your CSS animation reversing class
-        $container.addClass('is-exiting');
+barba.hooks.before((data) => {
+  const background = data.current.container.dataset.background;
+  body.style.setProperty('--page-background', background);
+});
 
-        // Restart your animation
-        // smoothState.restartCSSAnimations();
+let scrollX = window.scrollX
+let scrollY = window.scrollY
+
+barba.init({
+  views: [
+    {
+      namespace: 'home',
+      beforeLeave(data) {
+        scrollX = window.scrollX;
+        scrollY = window.scrollY;
+      },
+      beforeEnter(data) {
+        window.scrollTo(scrollX, scrollY);
+        reloadRellax();
+      },
+      afterEnter(data) {
       }
     },
-    onProgress: {
-      // How long this animation takes
-      duration: 0,
-      // A function that dictates the animations that take place
-      render: function ($container) {}
+    {
+      namespace: 'project',
+      beforeLeave(data) {
+        document.querySelector(".project-outer").style.transform = "translateY(-" + window.scrollY + "px)";
+      },
+      afterEnter(data) {
+        window.scrollTo(0, 0);
+      },
+    }
+  ],
+  transitions: [
+    {
+      name: 'transition',
+      sync: true,
+      leave() {},
+      enter() {},
     },
-    onReady: {
-    duration: 0,
-    render: function($container, $newContent) {
-        // Remove your CSS animation reversing class
-        $container.removeClass('is-exiting');
-        // Inject the new content
-        $container.html($newContent);
-        $('html, body').animate({ scrollTop: 0 }, 0);
-    }
-},
-    onAfter: function($container) {
-      // Remove your CSS animation reversing class
-      $container.removeClass('is-exiting');
-      var rellax = new Rellax('.rellax', {
-        breakpoints: [576, 768, 1201],
-        center:true
-      });
-    }
-  },
-  smoothState = $('#main').smoothState(options).data('smoothState');
+    {
+      name: 'project-to-project',
+      sync: true,
+      leave() {},
+      enter() {},
+      from: {
+        namespace: 'project'
+      },
+      to: {
+        namespace: 'project'
+      },
+    },
+  ],
 });
 
 </script>

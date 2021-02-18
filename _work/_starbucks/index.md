@@ -46,16 +46,16 @@ featured:
 ---
 
 
-<div class="project-row">
-    <div class="project-row-subtitle"><h3>Overview</h3></div>
-    <div class="project-row-copy">
+<div class="grid-row">
+    <div class="grid-row-label"><h3>Overview</h3></div>
+    <div class="grid-row-copy">
         <p>I worked on a variety of projects as a freelancer with Starbucks, from drawing some icons for a Coffee Passport app, to designing a touchscreen photobooth for their Times Square flagship store.</p>
     </div>
 </div>
 
-<div class="project-row">
-    <div class="project-row-subtitle"><h3>Touchscreen Photobooth</h3></div>
-    <div class="project-row-copy">
+<div class="grid-row">
+    <div class="grid-row-label"><h3>Touchscreen Photobooth</h3></div>
+    <div class="grid-row-copy">
         <p>Starbucks wanted to update the Touch-Screen Photo Booth in their Times Square flagship store with a custom-built solution that made it really quick & easy for visitors to take a souvenir selfie while they were waiting for their coffee.</p>
         <p>I worked with Starbucks to design the UX and simple UI for this new photobooth.</p>
         <p>The goal of this project was to provide a fun memento of a customer's visit to the Times Square Starbucks Store, and ultimately, to capture an email for the Starbucks newsletter. We aimed to reduce as much friction as possible - a photo can be sent with as few as 4 total taps (not including typing an email address with an on-screen keyboard).</p>
@@ -64,9 +64,9 @@ featured:
 
 ![alt text](/work/{{page.slug}}/starbucks-photobooth-01.jpg){:.browser}
 
-<div class="project-row">
-    <div class="project-row-subtitle"><h3>Coffee Passport</h3></div>
-    <div class="project-row-copy">
+<div class="grid-row">
+    <div class="grid-row-label"><h3>Coffee Passport</h3></div>
+    <div class="grid-row-copy">
         <h2>Tasting Notes</h2>
         <p>Starbucks was working on a new digital version of their Coffee Passport, which allows partners and customers to keep a journal of tasting notes as they try all of the different available roasts, and unlock stamps as they go.</p>
         <p>I helped with a few of the stamps, as well as few illustrations for an App Icon, seen below.</p>

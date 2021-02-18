@@ -36,8 +36,10 @@ $animation-timing-function: cubic-bezier(0.65, 0, 0.35, 1);
 
 // Typography
 
-$base-font-family:"Founders Grotesk", sans;
-$headline-font-family:"Founders Grotesk", sans;
+$base-font-family:"Sohne Buch", system, sans-serif;
+$headline-font-family:"Tiempos Headline", system, sans-serif;
+$display-font-family:"Tiempos Headline", system, sans-serif;
+$mono-font-family:"Jetbrains Mono", mono;
 $system-font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 
 $base-font-size:16; // in px

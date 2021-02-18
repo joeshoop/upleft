@@ -2,21 +2,47 @@
 // more-projects.scss
 
 #more-projects {
-    padding:$page-spacing 0;
-    background:black;
-    color:white;
+  padding:5rem 0;
+  background:black;
+  color:white;
+}
+
+#more-projects .project-meta a {
+  text-decoration:none
+}
+
+#more-projects .grid-row-moreprojects {
+  margin-top:1rem;
+  grid-column:1 / span 12;
+
+  @media ($break-s) {
+    grid-column: 3 / span 8;
+    padding: 0 2rem;
+  }
 }
 
 #more-projects .project-meta {
-  display:inline-block;
-  margin-right:1rem;
-  line-height:2;
-}
-
-.project-row-moreprojects {
-  grid-column:3 / span 10;
 
   @media ($break-s) {
-    grid-column:2 / span 11;
+    // display:inline-block;
   }
+}
+
+// #more-projects .project-meta + .project-meta {
+//   margin-top:$spacing-4;
+//   @media ($break-s) {
+//     margin-top:inherit;
+//   }
+// 
+
+#more-projects .project-meta:not(:last-child) h2 .underliner-over:after {
+  content:",";
+}
+
+#more-projects .project-meta:last-child h2 .underliner-over:before {
+  content:"and ";
+}
+
+#more-projects .project-meta:last-child h2 .underliner-over:after {
+  content:".";
 }

@@ -424,7 +424,7 @@ a.card {
   .meta .privacy path {
     color: inherit;
     fill: currentColor; }
-  .meta .privacy svg {
+  .meta .privacy .svg {
     display: inline-block;
     position: relative;
     top: 2px;

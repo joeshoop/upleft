@@ -48,9 +48,9 @@ featured:
 ---
 
 
-<div class="project-row">
-    <div class="project-row-subtitle"><h3>Overview</h3></div>
-    <div class="project-row-copy">
+<div class="grid-row">
+    <div class="grid-row-label"><h3>Overview</h3></div>
+    <div class="grid-row-copy">
         <p>Copper Boom is an interior design and general contracting company that is run by my friend Andrea. I did the branding and designed a built a basic website to get things off the ground.</p>
     </div>
 </div>

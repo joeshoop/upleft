@@ -2,16 +2,18 @@
 <html lang="en">
   {% include head.html %}
   <body>
-    <div class="m-scene" id="main">
-      <main id="page-{{ current }}" data-background="{{ page.background-color | default: 'rgba(0,0,0,1)' }}">
-        {% include header.html %}
-        <section id="content" class="scene_element scene_element-fadeIn">
-          {{ content }}</div>
-          {% include template-moreprojects.html %}
-          {% include footer.html %}
-        </section>
+    <div data-barba="wrapper">
+      {% include header.html %}
+      <main class="main home" data-barba="container" data-barba-namespace="home" data-background="{{ page.background-color | default: 'rgba(0,0,0,1)' }}">
+        <div id="page-{{ current }}">
+          <section id="content">
+            {{ content }}
+            {% include template-more-projects.html %}
+            {% include footer.html %}
+          </section>
+        </div>
       </main>
-      <div class="transition-background"></div>
+      <div class="loader"></div>
     </div>
     {% include scripts.html %}
   </body>

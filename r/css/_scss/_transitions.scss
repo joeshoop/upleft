@@ -1,0 +1,62 @@
+// Transitions
+
+.main {
+    width:100vw;
+  }
+
+.main.project {
+    z-index:1000;
+}
+
+
+.transition-leave-active,
+.transition-enter-active,
+.project-to-project-leave-active,
+.project-to-project-enter-active
+{
+    -webkit-transition: opacity 500ms ease, transform 500ms ease;
+    transition: opacity 500ms ease, transform 500ms ease;
+}
+
+.home.transition-enter,
+.home.transition-leave-to,
+.project.project-to-project-leave-to {
+    opacity:0;
+}
+
+.home.transition-leave,
+.home.transition-enter-to,
+.project.project-to-project-leave {
+    opacity:1;
+}
+
+.project.transition-leave,
+.project.transition-enter-to,
+.project.project-to-project-leave,
+.project.project-to-project-enter-to
+ {
+    opacity:1;
+    transform:translateY(0vh);
+}
+
+.project.project-to-project-leave-to
+{
+    opacity:0;
+    transform:scale(0.95);
+}
+
+.project.transition-enter,
+.project.transition-leave-to,
+.project.project-to-project-enter {
+    transform:translateY(100vh);
+}
+
+.project.transition-enter-active,
+.project.transition-leave-active,
+.project.project-to-project-enter-active,
+.project.project-to-project-leave-active {
+    position:fixed;
+    top:0;
+    height:100vh;
+    overflow-y: hidden;
+}

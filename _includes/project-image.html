@@ -1,0 +1,19 @@
+{% if include.size == "100vw" %}
+<img 
+    alt="{{include.alt}}"
+    srcset="
+        /work/{{page.slug}}/{{include.image}}_1440w.{{include.type}} 1440w,
+        /work/{{page.slug}}/{{include.image}}_2880w.{{include.type}} 2880w,
+        /work/{{page.slug}}/{{include.image}}_4320w.{{include.type}} 4320w"
+    sizes="{{include.size}}"
+    src="/work/{{page.slug}}/{{include.image}}_1440w.{{include.type}}" />
+{% else %}
+<img 
+    alt="{{include.alt}}"
+    srcset="
+        /work/{{page.slug}}/{{include.image}}_600w.{{include.type}} 600w,
+        /work/{{page.slug}}/{{include.image}}_1200w.{{include.type}} 1200w,
+        /work/{{page.slug}}/{{include.image}}_2400w.{{include.type}} 2400w"
+    sizes="(max-width: 640px) 80vw, 50vw"
+    src="/work/{{page.slug}}/{{include.image}}_600w.{{include.type}}" />
+{% endif %}
