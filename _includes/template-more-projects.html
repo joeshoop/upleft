@@ -8,17 +8,10 @@ template-work.html
     <div class="container">
         <div class="grid">
             <div class="grid-row-moreprojects">
-                <p class="text-preset-mono mb-1">Case Studies by Client</p>
+                <h3>Case Studies by Client</h3>
                 {% for project in sorted_projects %}
-                <div class="project-meta {{ project.slug }}-meta">
-                    <a href="{{ project.url }}">
-                        <div class="project-client">
-                            <h2 class="text-preset-header-xxl underliner-container">
-                                <span class="underliner-over">{{project.client-short}}</span>
-                                <span class="underliner"></span>
-                            </h2>
-                        </div>
-                    </a>
+                <div class="project-meta {{ project.slug }}-meta text-preset-header-xxl">
+                    <a href="{{ project.url }}"><div class="project-client"><h2 class="text-preset-header-xxl"><span class="underliner" style="--link-background-color:{{ project.highlight-color }}">{{project.client-short}}</span></h2></div></a>
                 </div>
                 {% endfor %}
             </div>

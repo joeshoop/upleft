@@ -16,9 +16,17 @@
   grid-column:1 / span 12;
 
   @media ($break-s) {
+    grid-column: 2 / span 10;
+    padding: 0 2rem;
+  }
+  @media ($break-m) {
     grid-column: 3 / span 8;
     padding: 0 2rem;
   }
+}
+
+#more-projects h3 {
+  margin-bottom:0.75rem;
 }
 
 #more-projects .project-meta {
@@ -35,14 +43,22 @@
 //   }
 // 
 
-#more-projects .project-meta:not(:last-child) h2 .underliner-over:after {
+#more-projects .project-meta:not(:last-child) h2 .underliner:after {
   content:",";
 }
 
-#more-projects .project-meta:last-child h2 .underliner-over:before {
+#more-projects .project-meta:last-child h2 .underliner:before {
   content:"and ";
 }
 
-#more-projects .project-meta:last-child h2 .underliner-over:after {
+#more-projects .project-meta:last-child h2 .underliner:after {
   content:".";
+}
+
+#more-projects .underliner {
+  box-shadow: inset 0 0em 0 var(--link-background-color, $color-primary);
+}
+
+#more-projects a:hover .underliner {
+  box-shadow: inset 0 -1.05em 0 var(--link-background-color, $color-primary); //Inset should match line-height
 }

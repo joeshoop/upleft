@@ -165,19 +165,7 @@ body {
   grid-column:1 / span 12;
 
   a {
-    position:Relative;
     text-decoration:none;
-    box-shadow:0 0.125em 0;
-    transition: box-shadow 200ms ease;
-  }
-
-  a:hover {
-    z-index:100;
-    box-shadow:0 0.25em 0;
-  }
-
-  .intro-indent {
-    padding-left:3rem;
   }
 
   @media ($break-m) {
@@ -213,11 +201,7 @@ hr {
 }
 
 .mb-1 {
-  margin-bottom:10vw;
-
-  @media ($break-l) {
     margin-bottom:1rem;
-  }
 }
 
 .mb-6 {
@@ -236,31 +220,15 @@ hr {
   }
 }
 
-.underliner-container {
-  position:relative;
+.underliner {
+  // position:relative;
   display:inline-block;
+  transition:box-shadow 300ms ease;
+  box-shadow: inset 0 -0.1em 0 var(--link-background-color, $color-primary);
 }
 
-.underliner-over {
-  position:relative;
-  z-index:10;
-}
-.underliner {
-  position:relative;
-  z-index:5;
-  display:inline-block;
-}
-.underliner {
-  left: 0;
-  bottom:0;
-  position: absolute;
-  height: 0.15em;
-  width: 0%;
-  background: inherit;
-  transition: width 200ms ease;
-}
 a:hover .underliner {
-  width:100%;
+  box-shadow: inset 0 -1.4em 0 var(--link-background-color, $color-primary);
 }
 
 @import "components/header";
