@@ -9,11 +9,15 @@ title: Home
             <p class="text-preset-mono">Recent work includes a platform to help people shop local from home, <a href="/work/dailynumber/"><span class="underliner" style="--link-background-color:#fbd603;">a daily fantasy sports game</span></a>, a design system for a business analytics tool, <a href="/work/shoreline/"><span class="underliner" style="--link-background-color:#00c278;">a website and design guidelines for a community college</span></a>, <a href="/work/eatthismuch/"><span class="underliner" style="--link-background-color:#f0754f;">product design for a meal planner app</span></a>, an interface for an in-flight entertainment system, design for a retail inventory tracking app, and many more.</p>
             <p class="text-preset-mono">Currenly available for new projects.</p>
             <p class="text-preset-mono">Contact: 
-                <a href="javascript:location='mailto:\u006a\u006f\u0065\u0040\u0075\u0070\u006c\u0065\u0066\u0074\u002e\u0063\u006f\u006d';void 0">
+                <!-- <a href="javascript:location='mailto:\u006a\u006f\u0065\u0040\u0075\u0070\u006c\u0065\u0066\u0074\u002e\u0063\u006f\u006d';void 0">
                     <span class="underliner">
-                    <script type="text/javascript">document.write('\u006a\u006f\u0065\u0040\u0075\u0070\u006c\u0065\u0066\u0074\u002e\u0063\u006f\u006d')</script>
+                    <script type="text/javascript">
+                    obscureThatThing = function(){document.write('\u006a\u006f\u0065\u0040\u0075\u0070\u006c\u0065\u0066\u0074\u002e\u0063\u006f\u006d')};
+                    obscureThatThing();
+                    </script>
                     </span>
-                </a>
+                </a> -->
+                <a href="mailto:joe@upleft.com"><span class="underliner">joe@upleft.com</span></a>
             </p>
         </div>
     </div>
